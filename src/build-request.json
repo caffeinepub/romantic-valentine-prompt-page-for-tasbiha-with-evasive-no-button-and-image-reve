@@ -1,0 +1,112 @@
+{
+  "kind": "build_request",
+  "title": "Romantic Valentine prompt page for Tasbiha with evasive No button and image reveal",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-screen romantic Valentine prompt page addressed to “Tasbiha” with the sole purpose of asking her to be the user’s Valentine, showing exactly two options: “Yes” and “No”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create an interactive web page as a surprise for my girlfriend. The page should be simple, romantic-themed, and have only one purpose: to ask tasbiha to be my Valentine.\nThere should be two options: Yes or No. gf name is \"Tasbiha\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "The main prompt clearly asks Tasbiha to be the user’s Valentine.",
+        "Only two choice buttons are presented: “Yes” and “No”.",
+        "All user-facing text is in English and includes the name “Tasbiha” as spelled by the user."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a playful interaction where the “No” button moves away when the pointer hovers over it (or when a touch interaction attempts to target it), making it effectively impossible to click/tap “No” on desktop and mobile.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "When she hovers her cursor over No, it should move away so she cannot click it, forcing her to click only on Yes.\n... run it on my iPad or in phone both using Chrome."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On desktop, hovering the cursor over the “No” button causes it to reposition away from the cursor before it can be clicked.",
+        "On mobile/touch, attempting to tap the “No” button causes it to move away such that it is effectively not tappable.",
+        "The “Yes” button remains stable and clickable/tappable at all times.",
+        "The “No” button stays within the visible viewport (does not move off-screen)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "On clicking/tapping “Yes”, transition the UI to a celebratory/romantic confirmation state and display the provided image exactly as given (no edits or transformations to the image content).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "When she clicks Yes, show her a image given also no changing in image use this excet."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking/tapping “Yes” changes the page state to a success/celebration view.",
+        "The provided image is displayed in that success view.",
+        "The app uses the exact image file provided by the user without modifying the image content (no cropping, filters, recoloring, or overlays on the image itself)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a cohesive romantic theme using a pink and white color scheme, with responsive layout and touch-friendly sizing so it runs well in Chrome on iPad and phones.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The page should be themed\nromantically with a pink and white color scheme and be fully interactive ... so that I can easily run it on my iPad or in phone both using Chrome."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The primary visual palette is pink and white (backgrounds, buttons, accents).",
+        "Layout is responsive and fits common phone and tablet viewports without horizontal scrolling.",
+        "Buttons are large enough for touch (no tiny tap targets), and text remains readable on mobile.",
+        "All interactivity works in Chrome on mobile/tablet (no hover-only critical flows besides the intended “No” avoidance, which must also handle touch)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Do not require any backend features for this experience; implement it fully in the frontend as a lightweight, single-page interaction.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "... be fully interactive using\nHTML, CSS, and JavaScript ..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Valentine interaction works without calling backend methods.",
+        "No data persistence, accounts, or server-side dependencies are required to use the page."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must not modify any files under the immutable paths listed in SYSTEM_CONTEXT (compose existing UI components instead of editing them).",
+    "Backend must remain single-actor architecture if any backend code exists, but this feature should not require backend changes."
+  ],
+  "nonGoals": [
+    "Internet Identity login or any authentication.",
+    "Storing the response or tracking analytics.",
+    "Multiple pages, navigation, or additional app features beyond the Valentine prompt and its interactions.",
+    "Generating or editing the user-provided image (must be used as-is)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

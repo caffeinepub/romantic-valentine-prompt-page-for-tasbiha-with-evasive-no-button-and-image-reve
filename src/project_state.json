@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Interactive romantic web page to ask Tasbiha to be Valentine with Yes/No buttons, playful evasive No button, and showing a provided image upon Yes; runs on mobile/iPad Chrome using HTML/CSS/JS.",
+  "architectural_notes": [
+    "Single-page static web app (HTML/CSS/JS) optimized for mobile/iPad Chrome touch and mouse interactions"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-screen-romantic-valentine-prompt-page-addressed-to-tasbiha-with-the-sole-purpose-of-asking-her-to-be-the-user-s-valentine-showing-exactly-two-options-yes-and-no",
+      "title": "Create a single-screen romantic Valentine prompt page addressed to “Tasbiha” with the sole purpose of asking her to be the user’s Valentine, showing exactly two options: “Yes” and “No”.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-playful-interaction-where-the-no-button-moves-away-when-the-pointer-hovers-over-it-or-when-a-touch-interaction-attempts-to-target-it-making-it-effectively-impossible-to-click-tap-no-on-desktop-and-mobile",
+      "title": "Implement a playful interaction where the “No” button moves away when the pointer hovers over it (or when a touch interaction attempts to target it), making it effectively impossible to click/tap “No” on desktop and mobile.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-clicking-tapping-yes-transition-the-ui-to-a-celebratory-romantic-confirmation-state-and-display-the-provided-image-exactly-as-given-no-edits-or-transformations-to-the-image-content",
+      "title": "On clicking/tapping “Yes”, transition the UI to a celebratory/romantic confirmation state and display the provided image exactly as given (no edits or transformations to the image content).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-romantic-theme-using-a-pink-and-white-color-scheme-with-responsive-layout-and-touch-friendly-sizing-so-it-runs-well-in-chrome-on-ipad-and-phones",
+      "title": "Apply a cohesive romantic theme using a pink and white color scheme, with responsive layout and touch-friendly sizing so it runs well in Chrome on iPad and phones.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-do-not-require-any-backend-features-for-this-experience-implement-it-fully-in-the-frontend-as-a-lightweight-single-page-interaction",
+      "title": "Do not require any backend features for this experience; implement it fully in the frontend as a lightweight, single-page interaction.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a simple romantic-themed interactive Valentine web page addressing Tasbiha with Yes/No choices",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement evasive 'No' button that moves away on hover to prevent clicking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "On 'Yes' click, display the user-provided image exactly as given and keep a pink/white romantic theme",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Ensure the page runs easily on iPad/phone in Chrome using only HTML, CSS, and JavaScript",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine prompt page for Tasbiha with evasive No button and image reveal",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

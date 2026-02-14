@@ -1,0 +1,113 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine prompt page for Tasbiha (single-screen, evasive No, image reveal)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-screen romantic Valentine prompt addressed to Tasbiha with exactly two choices: Yes and No.",
+      "acceptanceCriteria": [
+        "The main prompt clearly asks Tasbiha to be the user’s Valentine.",
+        "Only two choice buttons are presented: “Yes” and “No”.",
+        "All user-facing text is in English and includes the name “Tasbiha” as spelled by the user."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-screen Valentine prompt UI addressed to “Tasbiha”, rendering exactly two actions (“Yes” and “No”) and keeping all user-facing copy in English. Use shadcn-ui components (e.g., Button/Card) to provide consistent UI styling and accessible button behavior; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Wire the new single-screen App as the only rendered experience (ensuring no additional pages/navigation are introduced) and keep the entry lightweight for this interaction."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Make the No button playfully evade pointer and touch interactions while staying within the viewport; Yes remains stable.",
+      "acceptanceCriteria": [
+        "On desktop, hovering the cursor over the “No” button causes it to reposition away from the cursor before it can be clicked.",
+        "On mobile/touch, attempting to tap the “No” button causes it to move away such that it is effectively not tappable.",
+        "The “Yes” button remains stable and clickable/tappable at all times.",
+        "The “No” button stays within the visible viewport (does not move off-screen)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useEvasiveNoButton.ts",
+          "operation": "create",
+          "description": "Implement reusable logic to reposition the “No” button in response to pointer hover/move and touch/pointer-down attempts, clamping the computed position so the button stays fully within the visible viewport."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Integrate the evasive “No” behavior (hover and touch-safe) using the new hook, ensuring the “Yes” button remains fixed/stable and that the “No” button never moves off-screen. Use shadcn-ui Button for consistent hit-area sizing; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "On Yes, transition to a celebratory confirmation state and display the provided image as-is (no content edits).",
+      "acceptanceCriteria": [
+        "Clicking/tapping “Yes” changes the page state to a success/celebration view.",
+        "The provided image is displayed in that success view.",
+        "The app uses the exact image file provided by the user without modifying the image content (no cropping, filters, recoloring, or overlays on the image itself)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/valentine-image.jpg",
+          "operation": "create",
+          "description": "Add the exact user-provided image file to the app as a static asset (place the original file here with no edits or transformations)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Implement the success/celebration view shown after “Yes” is clicked/tapped and render the static image asset (frontend/public/assets/valentine-image.jpg) without applying cropping, filters, recoloring, or overlays on the image itself."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply a cohesive romantic pink/white theme with a responsive, touch-friendly layout that works well on iPad/phones in Chrome.",
+      "acceptanceCriteria": [
+        "The primary visual palette is pink and white (backgrounds, buttons, accents).",
+        "Layout is responsive and fits common phone and tablet viewports without horizontal scrolling.",
+        "Buttons are large enough for touch (no tiny tap targets), and text remains readable on mobile.",
+        "All interactivity works in Chrome on mobile/tablet (no hover-only critical flows besides the intended “No” avoidance, which must also handle touch)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styling entrypoint used by the app to establish a pink/white romantic theme (backgrounds, typography defaults) and mobile-friendly base styles (e.g., ensuring no horizontal scrolling)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Apply responsive layout and touch-friendly sizing (large buttons, readable text) using the existing Tailwind setup and shadcn-ui component styling where appropriate; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Ensure the experience is fully frontend-only with no backend calls, persistence, or server-side dependencies.",
+      "acceptanceCriteria": [
+        "The Valentine interaction works without calling backend methods.",
+        "No data persistence, accounts, or server-side dependencies are required to use the page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the Valentine interaction is implemented entirely with local React state and does not import or call any backend capabilities (no backend method usage)."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Remove/avoid any unnecessary backend-related providers or initialization for this page so the app runs as a lightweight single-page interaction without server-side dependencies."
+        }
+      ]
+    }
+  ]
+}

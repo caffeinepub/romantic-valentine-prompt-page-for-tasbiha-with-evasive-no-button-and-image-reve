@@ -1,0 +1,76 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T08:37:47.040Z",
+  "summary": "Frontend implements a romantic single-screen prompt and a celebratory state with an evasive “No” button hook and pink/white theme styling, but there are gaps/risks around the exact “Yes/No” button labels, the provided image asset, and the introduction of unrequested auth/actor/backend-related code and a promotional footer/link.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Show exactly two options: “Yes” and “No”.",
+      "reason": "The visible “Yes” button label appears to be “Yes! 💕” (includes punctuation/emoji), which does not match the requirement to present exactly “Yes” and “No”. The “No” button label cannot be verified due to truncation.",
+      "evidence": [
+        "frontend/src/App.tsx (shows Button text: \"Yes! 💕\"; No button section truncated)"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Display the provided image exactly as given on “Yes” (use the exact image file provided by the user).",
+      "reason": "The celebratory view references an image at \"/assets/valentine-image.jpg\", but the diff does not show the user-provided image being added or referenced by its provided filename/path; cannot confirm the provided image file is used as-is.",
+      "evidence": [
+        "frontend/src/App.tsx (img src=\"/assets/valentine-image.jpg\")",
+        "ADDED FILES list does not include any image asset file"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication/context and actor creation hooks (auth/identity plumbing).",
+      "reason": "Explicitly listed as a non-goal (no Internet Identity login/authentication) and REQ-5 requests no backend dependencies; these hooks and provider introduce unrequested auth-related functionality.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/main.tsx (wraps App with InternetIdentityProvider)"
+      ]
+    },
+    {
+      "description": "Backend canister added (even if empty).",
+      "reason": "REQ-5 indicates no backend features are required; adding backend code is unrequested for this purely-frontend interaction.",
+      "evidence": [
+        "backend/main.mo (actor {})"
+      ]
+    },
+    {
+      "description": "Promotional footer with external link (caffeine.ai) including UTM parameters and dynamic hostname usage.",
+      "reason": "Not requested; adds extra UI and an outbound referral/tracking-style link beyond the Valentine prompt/confirmation interaction.",
+      "evidence": [
+        "frontend/src/App.tsx (footer with caffeine.ai link and utm_source/utm_medium/utm_content)"
+      ]
+    },
+    {
+      "description": "React Query integration and query hooks added for actor/query management.",
+      "reason": "Not requested for a lightweight single-page Valentine interaction; adds extra app infrastructure unrelated to requirements.",
+      "evidence": [
+        "frontend/src/main.tsx (QueryClientProvider)",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/hooks/useActor.ts (uses @tanstack/react-query)"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useEvasiveNoButton.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

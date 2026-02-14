@@ -1,0 +1,99 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-screen-romantic-valentine-prompt-page-addressed-to-tasbiha-with-the-sole-purpose-of-asking-her-to-be-the-user-s-valentine-showing-exactly-two-options-yes-and-no",
+      "featureTitle": "Create a single-screen romantic Valentine prompt page addressed to “Tasbiha” with the sole purpose of asking her to be the user’s Valentine, showing exactly two options: “Yes” and “No”.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-playful-interaction-where-the-no-button-moves-away-when-the-pointer-hovers-over-it-or-when-a-touch-interaction-attempts-to-target-it-making-it-effectively-impossible-to-click-tap-no-on-desktop-and-mobile",
+      "featureTitle": "Implement a playful interaction where the “No” button moves away when the pointer hovers over it (or when a touch interaction attempts to target it), making it effectively impossible to click/tap “No” on desktop and mobile.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/hooks/useEvasiveNoButton.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-on-clicking-tapping-yes-transition-the-ui-to-a-celebratory-romantic-confirmation-state-and-display-the-provided-image-exactly-as-given-no-edits-or-transformations-to-the-image-content",
+      "featureTitle": "On clicking/tapping “Yes”, transition the UI to a celebratory/romantic confirmation state and display the provided image exactly as given (no edits or transformations to the image content).",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-romantic-theme-using-a-pink-and-white-color-scheme-with-responsive-layout-and-touch-friendly-sizing-so-it-runs-well-in-chrome-on-ipad-and-phones",
+      "featureTitle": "Apply a cohesive romantic theme using a pink and white color scheme, with responsive layout and touch-friendly sizing so it runs well in Chrome on iPad and phones.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-do-not-require-any-backend-features-for-this-experience-implement-it-fully-in-the-frontend-as-a-lightweight-single-page-interaction",
+      "featureTitle": "Do not require any backend features for this experience; implement it fully in the frontend as a lightweight, single-page interaction.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

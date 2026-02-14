@@ -1,0 +1,7 @@
+{
+  "frontend/src/App.tsx": "Main Valentine's Day page component with two states (question and celebration), featuring an evasive \"No\" button and image reveal on \"Yes\" click, styled with romantic pink/white theme.",
+  "frontend/src/hooks/useEvasiveNoButton.ts": "Custom React hook that manages the evasive \"No\" button behavior, repositioning it randomly within viewport boundaries on hover and touch events.",
+  "frontend/src/index.css": "Global styles with romantic pink/white OKLCH color system, custom CSS variables for the Valentine theme, and responsive base styles.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color tokens (primary, accent, light, lighter, dark, medium) mapped to CSS variables for the pink/white Valentine theme.",
+  "frontend/src/main.tsx": "Simplified application entry point with QueryClientProvider only (removed InternetIdentityProvider as authentication is not needed for this feature)."
+}
